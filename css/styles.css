@@ -1,0 +1,14 @@
+#title {
+    color: black;
+    padding-left: 200px;
+}
+
+body {
+    padding: 0;
+    margin: 100;
+    justify-content: center;
+}
+
+.p5Canvas {
+    align-items: center;
+}
