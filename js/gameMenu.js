@@ -1,6 +1,9 @@
 
 //Screen Option 1
 function gameMenuScreen() {
+
+    document.getElementById('snake-score').innerHTML = '';
+
     
     push();
     
@@ -16,7 +19,7 @@ function gameMenuScreen() {
     
     // Snake Game Title
     stroke(0);
-    fill(255,75,75);
+    fill(75,75,75);
     textAlign(CENTER,CENTER);
     textSize(70);
     strokeWeight(5);
@@ -41,12 +44,12 @@ function gameMenuScreen() {
 function gameEndScreen() {
     
     push();
-    
+
     rectMode(CENTER);
     
     textAlign(CENTER, CENTER);
     stroke(0);
-    fill(255, 75, 75);
+    fill(color(75,75,75));
     textSize(50);
     text('YOU DIED!!!', 300, 150, 300, 250);
     text('Score:', 300, 220, 260, 250);
@@ -66,6 +69,7 @@ function gameEndScreen() {
 // Screen Option 2
 function singlePlayerScreen() {
     
+
     push();
     
     rectMode(CENTER);
@@ -76,7 +80,7 @@ function singlePlayerScreen() {
     textAlign(CENTER,CENTER);
     textSize(60);
     strokeWeight(5);
-    fill(255,75,75);
+    fill(color(75,75,75));
     text('Single Player', 300, 110, 500, 225); 
     
     playButton.show();
@@ -112,7 +116,7 @@ function twoPlayerScreen() {
     textAlign(CENTER,CENTER);
     textSize(60);
     strokeWeight(5);
-    fill(255,75,75);
+    fill(color(75,75,75));
     text('Two Player', 300, 40, 500, 225); 
     
     playButton2.show();

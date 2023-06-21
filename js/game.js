@@ -26,7 +26,17 @@ var twoPlayer = false;
 var scrnW = 600;
 var scrnH = 600;
 
+var foodImg;
+
+function preload() {
+    var food = ['apple', 'banana', 'bread', 'cheese', 'chicken', 'fries', 'hamburger', 'steak'];
+    foodImg = food.map(food => {
+        return loadImage(`../assets/food/${food}.png`);
+    })
+}
+
 function setup() {
+
     
     snakeColor = color(0, 0, 255);
     snakeOutline = color(0);
@@ -64,7 +74,7 @@ function draw() {
         gameEndScreen();
     }
     else if (screenNum == 0) {
-        if     (singlePlayer) {
+        if (singlePlayer) {
             gameRun();
         }
         else if(twoPlayer) {
@@ -106,9 +116,9 @@ function newGame() {
 function gameRun() {
     
     snake.update();
+    snakeScore();
     snake.death();
     snake.show();
-    snakeScore();
     
     if(snake.eat(food)) {
         pickLocation();
@@ -117,10 +127,17 @@ function gameRun() {
     push();
     ellipseMode(CORNER);
     
-    stroke(0);
-    strokeWeight(2);
-    fill(fr, fg, fb);
-    ellipse(food.x, food.y, scl);
+
+    // draw food
+
+    // basic circle with random color
+    // stroke(0);
+    // strokeWeight(2);
+    // fill(fr, fg, fb);
+    // ellipse(food.x, food.y, scl);
+
+    image(newFood, food.x, food.y, scl, scl);
+
     
     pop();
     
@@ -135,8 +152,8 @@ function gameRun() {
         snake.death();
         snake2.death();
         snake.show();
-        snake2.show()
-        snakeScore();        
+        snake2.show() 
+        snakeScore2();      
 
         if(snake.eat(food) || snake2.eat(food)) {
             pickLocation();
@@ -145,10 +162,14 @@ function gameRun() {
         push();
         ellipseMode(CORNER);
 
-        stroke(0);
-        strokeWeight(2);
-        fill(fr, fg, fb);
-        ellipse(food.x, food.y, scl);
+        // draw food 
+        // stroke(0);
+        // strokeWeight(2);
+        // fill(fr, fg, fb);
+        // ellipse(food.x, food.y, scl);
+
+        // food image
+        image(newFood, food.x, food.y, scl, scl);
 
         pop();  
 
@@ -157,6 +178,7 @@ function gameRun() {
 
 //food color variables
 var fr, fb, fg;
+var newFood;
 function pickLocation() {
 
     var cols = floor(width/scl);
@@ -165,23 +187,28 @@ function pickLocation() {
     food = createVector(floor(random(cols)), floor(random(rows)));
     food.mult(scl);
     
-    fr = 155 + random(100);
-    fg = 155 + random(100);
-    fb = 155 + random(100);
+    // fr = 155 + random(100);
+    // fg = 155 + random(100);
+    // fb = 155 + random(100);
+
+    newFood = random(foodImg);
 }
 
-// Single Player Score 
+// Single Player Score
 function snakeScore() {
     
     push();
     
     score = snake.total;
-    noStroke();
-    fill(255,0,100);
-    textAlign(CENTER, CENTER);
-    textSize(30);
-    rectMode(CENTER);
-    text(score, 300, 50, 50, 30);
+    // noStroke();
+    // fill(255,0,100);
+    // textAlign(CENTER, CENTER);
+    // textSize(30);
+    //rectMode(CENTER);
+    // text(score, 300, 50, 50, 30);
+
+    document.getElementById('snake-score').innerHTML = snake.total;
+  
     
     pop();
 }
@@ -194,14 +221,17 @@ function snakeScore2() {
     score = snake.total;
     score2 = snake2.total;
     
-    noStroke();
-    fill(255, 0, 100);
-    textAlign(CENTER, CENTER);
-    textSize(30);
-    rectMode(CENTER);
+    // noStroke();
+    // fill(255, 0, 100);
+    // textAlign(CENTER, CENTER);
+    // textSize(30);
+    // rectMode(CENTER);
     
-    text(score, 200, 50, 50, 30);
-    text(score2, 200, 50, 50, 30);
+    // text(score, 200, 50, 50, 30);
+    // text(score2, 200, 50, 50, 30);
     
+
+    document.getElementById('snake-score').innerHTML = snake.total;
+    document.getElementById('snake2-score').innerHTML = snake2.total;
     pop();
 }

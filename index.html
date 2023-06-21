@@ -1,28 +1,68 @@
 <!DOCTYPE html>
 <html lang="">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Snake Game</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
 
-  <!-- <script src="libraries/addons/p5.sound.min.js"></script>-->
-  <script src="libraries/p5.js"></script>
-  <script src="js/game.js"></script>
-  <script src="js/snake.js"></script>
-  <script src="js/gameMenu.js"> </script>
-  <script src="js/input.js"></script>
-  <script src="js/buttons.js"></script>
+    <!-- <script src="libraries/addons/p5.sound.min.js"></script>-->
+    <script src="libraries/p5.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/snake.js"></script>
+    <script src="js/gameMenu.js"> </script>
+    <script src="js/input.js"></script>
+    <script src="js/buttons.js"></script>
+    <script src="js/index.js" defer></script>
 
-  <link rel="stylesheet" href="css/styles.css">
 
-</head>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
 
-<body>
-  <main>
-    <h1 id="title">Snake Game</h1>
-    <div id="sketch-holder"></div>
-  </main>
-</body>
+  <body>
+    <div class="name-container">
+      <form class="name-form">
+        <label for="nickname">Nickname</label>
+        <input type="text" id="nickname" value="Player 1">
+    </form>
 
+    <div class="theme-container">
+      <h2>Choose Your Theme</h2>
+      <button class='theme-btn clicked-theme' id="black-theme">Black</button>
+      <button class='theme-btn' id="white-theme">White</button>
+      <button class='theme-btn' id="red-theme">Red</button>
+      <button class='theme-btn' id="green-theme">Green</button>
+      <button class='theme-btn' id="blue-theme">Blue</button>
+      <button class='theme-btn' id="orange-theme">Orange</button>
+      <button class='theme-btn' id="yellow-theme">Yellow</button>
+      <button class='theme-btn' id="purple-theme">Purple</button>
+      <button class='theme-btn' id="pink-theme">Pink</button>
+    </div>
+  </div>
+    
+
+    <div id="sketch-holder">
+      <div id="snake-score"></div>
+      <div id="snake2-score"></div>
+    </div>
+
+    <div id='score-holder' class='score-container'>
+
+      <div class="card header-card">
+        <h2 class="card-name">Nickname</h2>
+        <h2 class="card-score">Score</h2>
+      </div>
+
+      <div id='scores' class="scores">
+
+        <!-- <div class="card score-card">
+          <h2 class="card-name">Player 1</h2>
+          <h2 class="card-score">30</h2>
+        </div> -->
+
+      </div>
+
+    </div>
+    
+  </body>
 </html>

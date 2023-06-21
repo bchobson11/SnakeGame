@@ -1,14 +1,192 @@
-#title {
-    color: black;
-    padding-left: 200px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --theme-color: 0,0,0;
 }
 
 body {
-    padding: 0;
-    margin: 100;
-    justify-content: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: linear-gradient(to bottom right, gray, rgba(var(--theme-color), 0.75), gray), url(../assets/background.jpg);
+  transition: background-color 5s;
+  background-size: repeat;
+  animation: moveIt 30s linear infinite;
+  overflow: hidden;
 }
 
 .p5Canvas {
-    align-items: center;
+  margin: auto;
+  padding: 0;
+  box-shadow: 10px 10px 20px black;
+}
+
+#sketch-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#snake-score {
+  color: rgba(var(--theme-color), 0.2);
+  font-size: 400px;
+  font-weight: bolder;
+  position: absolute;
+  text-shadow: 5px 5px 5px rgba(255,255,255, 0.2);
+}
+
+.name-container {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  align-items: center;
+  justify-content: center;
+}
+
+.name-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name-form label {
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.name-form input {
+  font-size: 22px;
+  color: white;
+  background: rgba(255,255,255, 0.35);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.name-form input:focus {
+  outline: none;
+}
+
+.name-form input::placeholder {
+  color: white;
+}
+
+.theme-container {
+  margin-top: 50px;
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  background: rgba(255,255,255, 0.35);
+  border-radius: 10px;
+  padding: 10px 15px;
+  justify-content: space-evenly;
+}
+
+.theme-container h2 {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.theme-btn {
+  margin-bottom: 5px;
+  border-radius: 10px;
+  padding: 5px;
+  width: 30%;
+  text-transform: uppercase;
+  color: gray;
+  background: rgba(256,256,256,0.5);
+}
+
+.theme-btn:hover {
+  color: white;
+  background: rgba(0,0,0,0.5);
+  cursor: pointer;
+
+}
+
+.clicked-theme {
+  background: linear-gradient(to bottom right, rgb(180, 180, 180), rgba(var(--theme-color), 0.5));
+  color: white
+}
+
+
+.score-container {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  padding: 10px 20px;
+  background: rgba(255,255,255, 0.25);
+  border-radius: 10px;
+  color: black;
+  height: 350px;
+}
+
+.scores {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  border-radius: 10px;
+  color: black;
+  height: 350px;
+  overflow-y: overlay;
+  align-items: center;
+}
+
+.scores::-webkit-scrollbar {
+  background: gray;
+  width: 8px;
+  border-radius: 10px;
+}
+
+.scores::-webkit-scrollbar-thumb {
+  background: linear-gradient(black, rgb(var(--theme-color)));
+  border-radius: 10px;
+}
+
+.card {
+  padding: 15px;
+}
+
+.header-card {
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  align-self: center;
+  width: 85%;
+}
+
+.score-card {
+  width: 85%;
+  margin: 10px 0px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 3px black;
+  background: linear-gradient(to bottom right, rgb(180, 180, 180), rgba(var(--theme-color), 0.5));
+}
+
+.card-name {
+  width: 150px;
+  text-align: center;
+}
+
+.card-score {
+  width: 75px;
+  text-align: center;
+}
+
+
+@keyframes moveIt {
+  from {background-position: top left;}
+  to {background-position: bottom right;}
 }

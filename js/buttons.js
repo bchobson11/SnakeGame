@@ -22,7 +22,7 @@ var colButtonList2 = [];
 function button(title, titleSize, x, y, wid, ht, val, scrn) {
    
     this.buttTitle = title;
-    this.buttCol = color(255, 75, 75);
+    this.buttCol = color(75, 75, 75);
     this.buttTitleCol = color(255);
     this.midPointx = x;
     this.midPointy = y;
@@ -88,7 +88,7 @@ function button(title, titleSize, x, y, wid, ht, val, scrn) {
             if (mx >= x - this.buttWidth/2 && mx <= x +this.buttWidth/2 && 
                 my >= y - this.buttHeight/2 && my <= y + this.buttHeight/2) {
                 
-                this.buttTitleCol = color(255, 75, 75);
+                this.buttTitleCol = color(75, 75, 75);
                 this.buttCol = color(230);
                 
                 document.body.style.cursor = "pointer";
@@ -99,7 +99,7 @@ function button(title, titleSize, x, y, wid, ht, val, scrn) {
             else {
                 
                 this.buttTitleCol = color(230);
-                this.buttCol = color(255, 75, 75);
+                this.buttCol = color(75, 75, 75);
                 
                 document.body.style.cursor = "default";
                         

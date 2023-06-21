@@ -20,13 +20,15 @@ class Snake {
                 var d = dist(this.x, this.y, pos.x, pos.y);
                 if (d < 1) {
                     screenNum = -1;
+                    addScoreToTable();
                 }
             }
 
             // death by hitting edges
             if (this.x < 0 || this.x >= scrnW || this.y < 0 || this.y >= scrnH) {
-
+                
                 screenNum = -1;
+                addScoreToTable();
             }
         };
 
@@ -155,4 +157,28 @@ class Snake {
             }
         };
     }
+}
+
+function addScoreToTable() {
+    let name = document.getElementById('nickname').value;
+
+    let holder = document.getElementById('scores');
+    let card = document.createElement('div');
+    card.className = 'card score-card';
+    // card.style.setProperty('background', 'rgba(var(--theme-color), 0.8');
+
+    let cardName = document.createElement('h2');
+    let node = document.createTextNode(name);
+    cardName.appendChild(node);
+    cardName.className = 'card-name';
+
+    let cardScore = document.createElement('h2');
+    node = document.createTextNode(snake.total);
+    cardScore.appendChild(node);
+    cardScore.className = 'card-score';
+
+    card.appendChild(cardName);
+    card.appendChild(cardScore);
+
+    holder.appendChild(card);
 }
