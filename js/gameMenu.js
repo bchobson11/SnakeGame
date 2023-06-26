@@ -35,14 +35,14 @@ function gameMenuScreen() {
     
 
     
-    print('Game Menu Screen');
+    // print('Game Menu Screen');
     
     pop();
 }
 
 // Screen Option -1
 function gameEndScreen() {
-    
+
     push();
 
     rectMode(CENTER);
@@ -51,8 +51,7 @@ function gameEndScreen() {
     stroke(0);
     fill(color(75,75,75));
     textSize(50);
-    text('YOU DIED!!!', 300, 150, 300, 250);
-    text('Score:', 300, 220, 260, 250);
+    text('GAME OVER', 300, 120, 350, 250);
     
     fill(255);
     textSize(100);
@@ -61,7 +60,7 @@ function gameEndScreen() {
     replayButton.show();
     homeButton.show();
     
-    print('Game End Screen');
+    // print('Game End Screen');
     
     pop();
 }
@@ -95,7 +94,7 @@ function singlePlayerScreen() {
         colButtonList[i].show();
     }
     
-    print('Single Player Screen');
+    // print('Single Player Screen');
     
     pop();
 }
@@ -139,7 +138,7 @@ function twoPlayerScreen() {
         colButtonList2[i].show();
     }
     
-    print('Two Player Screen');
+    // print('Two Player Screen');
     
     pop();
 }

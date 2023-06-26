@@ -141,7 +141,7 @@ function gameRun() {
     
     pop();
     
-    print('Single Player Game Running');
+    // print('Single Player Game Running');
 }
     
     // 2 Player
@@ -173,7 +173,7 @@ function gameRun() {
 
         pop();  
 
-        print('2 Player Game Running');
+        // print('2 Player Game Running');
     }
 
 //food color variables

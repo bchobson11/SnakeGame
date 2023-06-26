@@ -164,8 +164,7 @@ function addScoreToTable() {
 
     let holder = document.getElementById('scores');
     let card = document.createElement('div');
-    card.className = 'card score-card';
-    // card.style.setProperty('background', 'rgba(var(--theme-color), 0.8');
+    card.className = 'card score-card new-card';
 
     let cardName = document.createElement('h2');
     let node = document.createTextNode(name);
@@ -177,8 +176,13 @@ function addScoreToTable() {
     cardScore.appendChild(node);
     cardScore.className = 'card-score';
 
+    
     card.appendChild(cardName);
     card.appendChild(cardScore);
-
+    
     holder.appendChild(card);
+
+    var elem = document.getElementById('scores');
+    elem.scrollTop = elem.scrollHeight;
 }
+

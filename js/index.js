@@ -77,9 +77,6 @@ pinkButton.addEventListener('click', () => {
   let clicked = document.querySelector('.clicked-theme')
   clicked.classList.remove('clicked-theme')
   pinkButton.classList.add('clicked-theme')
-
 }); 
 
-function foo() {
-  document.getElementsByClassName('theme-btn')
-}
+
