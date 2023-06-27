@@ -31,7 +31,7 @@ var foodImg;
 function preload() {
     var food = ['apple', 'banana', 'bread', 'cheese', 'chicken', 'fries', 'hamburger', 'steak'];
     foodImg = food.map(food => {
-        return loadImage(`../assets/food/${food}.png`);
+        return loadImage(`./assets/food/${food}.png`);
     })
 }
 
