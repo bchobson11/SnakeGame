@@ -4,5 +4,7 @@ I Started this project back in 2019 to kickstart my journey in web development a
 
 After three years, I decided to revisit the project and expand my knowledge of web development by incorporating HTML and CSS. It's been an exciting journey, and I've learned valuable lessons along the way.
 
-Check out the live demo of this project: [Live Demo](https://bchobson11.github.io/SnakeGame/). Feel free to explore and provide any feedback or suggestions.
+Check out the live demo of this project: [Live Demo](https://bchobson11.github.io/SnakeGame/). 
+
+Feel free to explore and provide any feedback or suggestions.
 
